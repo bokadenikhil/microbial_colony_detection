@@ -13,6 +13,7 @@ directory = os.chdir(os.getcwd())
 try:
     with st.sidebar:
         st.header('Microbial Colony Detection')
+        uploaded_file = st.file_uploader("Choose a Image file", accept_multiple_files=False)
         image = Image.open(uploaded_file)
         
   #--------------------------------------------------------------#
