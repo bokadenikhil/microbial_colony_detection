@@ -4,14 +4,9 @@ import pandas as pd
 import cv2
 import os
 import time
-#------------------#
-input_path = r'C:\Users\Nikhil.Bokade\OneDrive - Tridiagonal Solutions\TSPL\Other\git\microbial colony detection\src\input'
-output_path = r'C:\Users\Nikhil.Bokade\OneDrive - Tridiagonal Solutions\TSPL\Other\git\microbial colony detection\src\processed'
-logo_path = r'C:\Users\Nikhil.Bokade\OneDrive - Tridiagonal Solutions\TSPL\Other\git\microbial colony detection\src\logo'
 #---------------------------------#
 st.markdown("<h1 style='text-align: center;color:yellow;'>Microbial Colony Detection</h1>", unsafe_allow_html=True)
 # Starting part
-os.chdir(input_path)
 files = os.listdir()
 try:
     with st.sidebar:
