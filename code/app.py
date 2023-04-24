@@ -1,16 +1,6 @@
-def install_and_import(package):
-    import importlib
-    try:
-        importlib.import_module(package)
-    except ImportError:
-        import pip
-        pip.main(['Install',package])
-#----------------------#
-
 import streamlit as st
 from PIL import Image
 import pandas as pd
-install_and_import('opencv-python')
 import cv2
 import os
 import time
