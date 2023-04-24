@@ -13,12 +13,8 @@ directory = os.chdir(os.getcwd())
 try:
     with st.sidebar:
         st.header('Microbial Colony Detection')
-        uploaded_file = st.file_uploader("Choose a Image file", accept_multiple_files=False)
-        if uploaded_file is not None:
-    # Convert the file to an opencv image.
-            im1 = uploaded_file.read()
-            file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-            im = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+        image = Image.open(uploaded_file)
+        
   #--------------------------------------------------------------#
     _, _, _, col, _, _, _ = st.columns([1]*6+[1.18])
     clicked = col.button('start')
@@ -26,8 +22,12 @@ try:
     if clicked:
         with col1:
             st.header('Input Image')
+            st.image(image, caption='Input', use_column_width=True)
+            img_array = np.array(image)
+            cv2.imwrite('out.jpg', cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR))
             st.image(im1)
             # convert to grayscale
+            im = cv2.imread('out.jpg')
             gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
             # threshold
             thresh = cv2.threshold(gray,128,255,cv2.THRESH_BINARY)[1]
