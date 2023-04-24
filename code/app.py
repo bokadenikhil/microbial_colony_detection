@@ -7,11 +7,9 @@ import time
 #---------------------------------#
 st.markdown("<h1 style='text-align: center;color:yellow;'>Microbial Colony Detection</h1>", unsafe_allow_html=True)
 # Starting part
-files = os.listdir()
+#files = os.listdir()
 try:
     with st.sidebar:
-        #logo = Image.open(logo_path+'\logo.png')
-        #st.image(logo,width=250)
         st.header('Microbial Colony Detection')
         uploaded_file = st.file_uploader("Choose a Image file", accept_multiple_files=False)
         if uploaded_file != None:
