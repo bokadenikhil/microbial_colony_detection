@@ -1,9 +1,7 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 from PIL import Image
 import pandas as pd
 import cv2
-import matplotlib.pyplot as plt
 import os
 import time
 #------------------#
