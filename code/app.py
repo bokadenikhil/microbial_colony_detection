@@ -13,10 +13,12 @@ try:
     with st.sidebar:
         st.header('Microbial Colony Detection')
         uploaded_file = st.file_uploader("Choose a Image file", accept_multiple_files=False)
-        if uploaded_file != None:
+        if uploaded_file is not None:
+    # Convert the file to an opencv image.
             im1 = Image.open(directory+'\\'+uploaded_file.name)
-            im = cv2.imread(directory+'\\'+uploaded_file.name)
-#------------------------------------------------------#
+            file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+            im = cv2.imdecode(file_bytes, 1)
+  #--------------------------------------------------------------#
     _, _, _, col, _, _, _ = st.columns([1]*6+[1.18])
     clicked = col.button('start')
     col1,col2 = st.columns(2)
