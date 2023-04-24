@@ -15,7 +15,7 @@ try:
         uploaded_file = st.file_uploader("Choose a Image file", accept_multiple_files=False)
         if uploaded_file is not None:
     # Convert the file to an opencv image.
-            im1 = Image.open(directory+'\\'+uploaded_file.name)
+            im1 = Image.open(uploaded_file.name)
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
             im = cv2.imdecode(file_bytes, 1)
   #--------------------------------------------------------------#
