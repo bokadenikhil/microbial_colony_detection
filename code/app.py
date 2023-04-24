@@ -8,13 +8,14 @@ import time
 st.markdown("<h1 style='text-align: center;color:yellow;'>Microbial Colony Detection</h1>", unsafe_allow_html=True)
 # Starting part
 #files = os.listdir()
+directory = os.chdir(os.getcwd())
 try:
     with st.sidebar:
         st.header('Microbial Colony Detection')
         uploaded_file = st.file_uploader("Choose a Image file", accept_multiple_files=False)
         if uploaded_file != None:
-            im1 = Image.open(uploaded_file.name)
-            im = cv2.imread(uploaded_file.name)
+            im1 = Image.open(directory+'\\'+uploaded_file.name)
+            im = cv2.imread(directory+'\\'+uploaded_file.name)
 #------------------------------------------------------#
     _, _, _, col, _, _, _ = st.columns([1]*6+[1.18])
     clicked = col.button('start')
