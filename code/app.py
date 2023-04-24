@@ -4,6 +4,7 @@ import pandas as pd
 import cv2
 import os
 import time
+import numpy as np
 #---------------------------------#
 st.markdown("<h1 style='text-align: center;color:yellow;'>Microbial Colony Detection</h1>", unsafe_allow_html=True)
 # Starting part
