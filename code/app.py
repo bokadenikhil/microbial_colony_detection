@@ -18,7 +18,7 @@ try:
     # Convert the file to an opencv image.
             im1 = uploaded_file.read()
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-            im = cv2.imdecode(file_bytes, 1)
+            im = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
   #--------------------------------------------------------------#
     _, _, _, col, _, _, _ = st.columns([1]*6+[1.18])
     clicked = col.button('start')
